@@ -1,0 +1,34 @@
+{
+  "name": "contextual",
+  "description": "A state management tool for Preact",
+  "author": "Ragnar Rognstad (http://rognstad.me)",
+  "repository": "rognstadragnar/module-starter",
+  "license": "MIT",
+  "version": "0.0.1",
+  "source": "src/main.ts",
+  "main": "dist/contextual.js",
+  "module": "dist/contextual.esm.js",
+  "browser": "dist/contextual.umd.js",
+  "devDependencies": {
+    "microbundle": "^0.4.3",
+    "preact": "^8.2.9",
+    "prettier": "^1.10.2",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.8.0"
+  },
+  "peerDependencies": {
+    "preact": "*"
+  },
+  "scripts": {
+    "release":
+      "npm run build && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish",
+    "bundle:main": "microbundle",
+    "dev:main": "microbundle watch --compress false",
+    "prepare": "npm run build",
+    "build": "npm run clean && npm run bundle:main",
+    "clean": "rimraf dist",
+    "test": "echo 'should add some tests.. :)'"
+  },
+  "files": ["src", "dist"]
+}
