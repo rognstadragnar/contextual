@@ -2,37 +2,19 @@
 import { Component, h, VNode } from 'preact'
 import { DEFAULT_CTX_PROPERTY } from './config'
 import { deepCompare } from './lib/deep-compare'
+// import { IStateAndActions, MapActionFn, MapStateFn } from './types'
+import { extractStateAndActions } from './utils/extract-state-and-actions'
+import { prepareChildren } from './utils/prepare-children'
+import { transformStateAndActions } from './utils/transform-state-and-actions'
+
 import {
-  extractStateAndActions,
+  IConsumerProps,
+  IRerenderPreventerProps,
+  IRerenderPreventerState,
   IStateAndActions,
   MapActionFn,
-  MapStateFn,
-  prepareChildren,
-  transformStateAndActions
-} from './utils'
-
-export type FragmentFunction = (children: any[]) => any
-
-export interface IConsumerProps {
-  mapStateToProps?: MapStateFn | true | null
-  mapActionsToProps?: MapActionFn | true | null
-  fragment?: string | FragmentFunction
-  children: Array<VNode<any> | string>
-  consumes?: string | string[]
-}
-
-export interface IRerenderPreventerProps {
-  mapStateToProps?: MapStateFn | true | null
-  mapActionsToProps?: MapActionFn | true | null
-  fragment?: string | FragmentFunction
-  childComponents: Array<VNode<any> | string>
-  actions: any
-  state: any
-}
-
-export interface IRerenderPreventerState extends IStateAndActions {
-  isMerged: boolean
-}
+  MapStateFn
+} from './index.d'
 
 class RerenderPreventer extends Component<
   IRerenderPreventerProps,
@@ -104,14 +86,13 @@ class RerenderPreventer extends Component<
 class Consumer extends Component<IConsumerProps, {}> {
   public displayName = `Consumer`
 
-  public render() {
-    const {
-      mapStateToProps,
-      mapActionsToProps,
-      fragment,
-      children,
-      consumes
-    } = this.props
+  public render({
+    mapStateToProps,
+    mapActionsToProps,
+    fragment,
+    children,
+    consumes
+  }: IConsumerProps) {
     if (!children[0]) {
       return null
     }

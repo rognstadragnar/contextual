@@ -1,7 +1,7 @@
 import * as chai from 'chai'
 import * as mocha from 'mocha'
 import { h } from 'preact'
-import { prepareChildren } from './../src/utils'
+import { prepareChildren } from './../src/utils/prepare-children'
 
 const expect = chai.expect
 describe('Utility functions', () => {

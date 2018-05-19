@@ -9,6 +9,7 @@
   "main": "dist/contextual.js",
   "module": "dist/contextual.esm.js",
   "browser": "dist/contextual.umd.js",
+  "types": "src/index.d.ts",
   "devDependencies": {
     "@types/chai": "^4.1.3",
     "@types/mocha": "^5.2.0",
@@ -36,5 +37,8 @@
     "clean": "rimraf dist",
     "test": "mocha -r ts-node/register __tests__/**/*.spec.ts"
   },
-  "files": ["src", "dist"]
+  "files": ["src", "dist", "index.d.ts"],
+  "dependencies": {
+    "@rognstadragnar/deep-enough-equals": "^0.1.1"
+  }
 }

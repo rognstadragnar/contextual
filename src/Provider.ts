@@ -1,17 +1,6 @@
 import { Component, h, VNode } from 'preact'
 import { DEFAULT_CTX_PROPERTY } from './config'
-import {
-  extractStateAndActions,
-  prepareChildren,
-  transformStateAndActions
-} from './utils'
-
-export interface IProviderProps {
-  name?: string
-  actions?: any
-  state?: any
-  children: VNode[]
-}
+import { IProviderProps } from './index.d'
 
 class Provider extends Component<IProviderProps> {
   public displayName = `Provider`
