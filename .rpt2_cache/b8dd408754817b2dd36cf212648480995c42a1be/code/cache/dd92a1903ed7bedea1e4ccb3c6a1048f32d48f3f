@@ -1,1 +1,0 @@
-{"code":"export var DEFAULT_CTX_PROPERTY = 'CTX';\r\n","map":{"mappings":""},"dts":{"name":"/Users/R/code/contextual/config.d.ts","text":"export declare const DEFAULT_CTX_PROPERTY = \"CTX\";\r\n"}}

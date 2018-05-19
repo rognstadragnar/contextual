@@ -1,5 +1,6 @@
 import { h, VNode } from 'preact'
 import { DEFAULT_CTX_PROPERTY } from './config'
+import { deepEquals } from './lib/deep-equal'
 
 export type VNodeFn = (state: any, action?: any) => VNode
 
@@ -29,8 +30,8 @@ const prepareChildren = (
   }
 
   const mergedAttributes = isMerged
-    ? { state, actions, ...attributes }
-    : { ...state, ...attributes }
+    ? { ...state, ...attributes }
+    : { state, actions, ...attributes }
 
   return h(nodeName, mergedAttributes, children)
 }
@@ -102,6 +103,12 @@ function transformStateAndActions(
     mergedState = { ...mergedState, actions }
   }
   return { state: mergedState, isMerged: true }
+}
+
+export interface IInstance {
+  props: any
+  state: any
+  context: any
 }
 
 export { prepareChildren, extractStateAndActions, transformStateAndActions }

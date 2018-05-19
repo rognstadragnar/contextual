@@ -1,6 +1,6 @@
 import { Component } from 'preact';
 import { Provider, Consumer } from 'contextual';
-
+import { mock } from './mock';
 const reducer = (state, action) => {
 	switch (action.type) {
 		case 'INC':
@@ -34,7 +34,8 @@ const bindActionCreators = (actions, dispatch) =>
 
 export class StoreProvider extends Component {
 	state = {
-		count: 0
+		count: 0,
+		mock
 	}
 
 	dispatch = action => {
