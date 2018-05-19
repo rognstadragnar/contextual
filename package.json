@@ -1,5 +1,5 @@
 {
-  "name": "contextual",
+  "name": "@rognstadragnar/contextual",
   "description": "A state management tool for Preact",
   "author": "Ragnar Rognstad (http://rognstad.me)",
   "repository": "rognstadragnar/module-starter",
