@@ -42,6 +42,6 @@
     "index.d.ts"
   ],
   "dependencies": {
-    "@rognstadragnar/deep-enough-equals": "^0.1.1"
+    "@rognstadragnar/deep-enough-equals": "^0.2.1"
   }
 }
