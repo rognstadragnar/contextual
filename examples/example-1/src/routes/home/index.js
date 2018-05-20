@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { Consumer } from 'contextual';
+import { Consumer } from '@rognstadragnar/contextual';
 import { StoreConsumer } from '../../store';
 import style from './style';
 

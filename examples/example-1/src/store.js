@@ -1,5 +1,5 @@
 import { Component } from 'preact';
-import { Provider, Consumer } from 'contextual';
+import { Provider, Consumer } from '@rognstadragnar/contextual';
 import { mock } from './mock';
 const reducer = (state, action) => {
 	switch (action.type) {
