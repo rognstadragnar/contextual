@@ -55,15 +55,17 @@ import { h, Component } from 'preact'
 import { Consumer } from '@rognstadragnar/contextual'
 
 const Counter = () => {
-  ;<Consumer consumes="counter-state">
-    {(state, actions) => (
-      <main>
-        <h1>{state.count}</h1>
-        <button onClick={actions.increment}>Increment</button>
-        <button onClick={actions.decrement}>Decrement</button>
-      </main>
-    )}
-  </Consumer>
+  return (
+    <Consumer consumes="counter-state">
+      {(state, actions) => (
+        <main>
+          <h1>{state.count}</h1>
+          <button onClick={actions.increment}>Increment</button>
+          <button onClick={actions.decrement}>Decrement</button>
+        </main>
+      )}
+    </Consumer>
+  )
 }
 ```
 
