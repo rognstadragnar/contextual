@@ -3,7 +3,6 @@ import { DEFAULT_CTX_PROPERTY } from './config'
 import { IProviderProps } from './index.d'
 
 class Provider extends Component<IProviderProps> {
-  public displayName = `Provider`
   public getChildContext() {
     const name = this.props.name || DEFAULT_CTX_PROPERTY
     return {
@@ -18,5 +17,7 @@ class Provider extends Component<IProviderProps> {
     return this.props.children[0] || null
   }
 }
+
+Provider.displayName = `Contextual(Provider)`
 
 export { Provider }

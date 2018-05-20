@@ -83,9 +83,9 @@ class RerenderPreventer extends Component<
   }
 }
 
-class Consumer extends Component<IConsumerProps, {}> {
-  public displayName = `Consumer`
+RerenderPreventer.displayName = 'Contextual(Consumer wrapper)'
 
+class Consumer extends Component<IConsumerProps, {}> {
   public render({
     mapStateToProps,
     mapActionsToProps,
@@ -109,5 +109,6 @@ class Consumer extends Component<IConsumerProps, {}> {
     })
   }
 }
+Consumer.displayName = 'Contextual(Consumer)'
 
 export { Consumer }
