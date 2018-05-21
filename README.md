@@ -95,6 +95,14 @@ export const Something = () => {
 > 1.  _If using either `mapStateToProps`, `mapActionsToProps` or both, props will be flattened like so `{ ...state, ...actions, ...rest }`_
 > 2.  _If `consumes` is an array of strings (e.g. `<Consumer consumes={['a', 'b']} />`, each will be object properties of the state (e.g. `{ a: ..., b: ... }`)_
 
+## Examples
+
+* [TodoMVC]
+* [Counter]
+
 ## License
 
 [MIT](LICENSE).
+
+[todomvc]: examples/todomvc
+[counter]: examples/counter
