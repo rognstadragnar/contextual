@@ -1,5 +1,5 @@
 <p align="center"><strong>contextual</strong></p>
-<p align="center"><i>Application state without the ceremony</i></p>
+<p align="center"><i>Unceremonious application state</i></p>
 
 ## Installation
 
@@ -16,8 +16,9 @@ They must wrap whatever wants to consume their state and actions.
 ```javascript
 import { h, Component } from 'preact'
 import { Provider } from '@rognstadragnar/contextual'
+import { Something } from './somwhere'
 
-class CounterContainer extends Component {
+export class CounterContainer extends Component {
   state = {
     count: 0
   }
@@ -39,7 +40,7 @@ class CounterContainer extends Component {
           decrement: this.decrement
         }}
       >
-        <Counter />
+        <Something />
       </Provider>
     )
   }
@@ -54,7 +55,7 @@ They can be used anywhere in your component tree as long as the `<Provider />` t
 import { h, Component } from 'preact'
 import { Consumer } from '@rognstadragnar/contextual'
 
-const Counter = () => {
+export const Something = () => {
   return (
     <Consumer consumes="counter-state">
       {(state, actions) => (
@@ -90,7 +91,9 @@ const Counter = () => {
 | `fragment`          | `Component` or `(children) => Component`                                           | Wraps the children. Default to a `<span />` if `children.length > 2` | No       |
 
 > Note:
-> _If using either `mapStateToProps`, `mapActionsToProps` or both, props will be flattened like so `{ ...state, ...actions, ...rest }`_
+>
+> 1.  _If using either `mapStateToProps`, `mapActionsToProps` or both, props will be flattened like so `{ ...state, ...actions, ...rest }`_
+> 2.  _If `consumes` is an array of strings (e.g. `<Consumer consumes={['a', 'b']} />`, each will be object properties of the state (e.g. `{ a: ..., b: ... }`)_
 
 ## License
 
