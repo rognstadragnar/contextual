@@ -4,7 +4,7 @@
   "author": "Ragnar Rognstad (http://rognstad.me)",
   "repository": "rognstadragnar/module-starter",
   "license": "MIT",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "source": "src/main.ts",
   "main": "dist/contextual.js",
   "module": "dist/contextual.esm.js",
