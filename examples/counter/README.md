@@ -1,22 +1,7 @@
-# {{ name }}
+# Basic counter example
 
-## CLI Commands
+Built with [Contextual], [Preact] and [Preact-cli]
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# test the production build locally
-npm run serve
-
-# run tests with jest and preact-render-spy 
-npm run test
-```
-
-For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
+[preact]: https://github.com/developit/preact
+[preact-cli]: https://github.com/developit/preact-cli
+[contextual]: https://github.com/rognstadragnar/contextual
